@@ -589,7 +589,7 @@ new Entity(-2200,520,40,80,"spikes",false,true,false,"red",null,true),
 new Entity(-2320,520,40,80,"spikes",false,true,false,"red",null,true),
 new Entity(-2360,400,360,40,"platform",true,true,false,"white",null,false),
 new Entity(-1920,280,280,40,"platform",true,true,false,"white",null,false),
-new Entity(-1560,0,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(-1560,0,80,80,"checkpoint",true,true,false,"red",null,false),
 new Entity(-40,-960,120,40,"platform",true,true,false,"white",null,false),
 new Entity(-760,-1000,960,40,"spikes",true,true,false,"red",null,true),
 new Entity(-360,-960,200,40,"platform",true,true,false,"white",null,false),
@@ -644,10 +644,10 @@ new Entity(-2320,40,40,120,"platform",true,true,false,"white",null,false),
 new Entity(-2440,0,40,160,"platform",true,true,false,"white",null,false),
 new Entity(-2560,-40,40,200,"platform",true,true,false,"white",null,false),
 new Entity(-2720,-120,80,80,"platform",false,true,false,"white",null,false),
-new Entity(-2680,-240,40,120,"spikes",false,true,false,"red",null,true),
+new Entity(-2640,-240,40,120,"spikes",false,true,false,"red",null,true),
 new Entity(-2920,-200,160,40,"platform",true,true,false,"white",null,false),
 new Entity(-3360,-200,120,40,"platform",true,true,false,"white",null,false),
-new Entity(-2880,-280,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(-2880,-280,80,80,"checkpoint",true,true,false,"red",null,false),
 new Entity(-3560,-360,520,40,"keyWall",true,true,false,"#995000",null,false),
 new Entity(-3560,-1760,40,1400,"platform",true,true,false,"white",null,false),
 new Entity(-3080,-1760,40,1400,"platform",true,true,false,"white",null,false),
@@ -658,8 +658,8 @@ new Entity(-3520,-400,120,40,"spikes",true,true,false,"red",null,true),
 new Entity(-3200,-400,120,40,"spikes",true,true,false,"red",null,true),
 new Entity(-3120,-520,40,40,"platform",true,true,false,"white",null,false),
 new Entity(-3520,-560,40,40,"platform",true,true,false,"white",null,false),
-new Entity(-3120,-640,40,40,"platform",true,true,false,"white",null,false),
-new Entity(-3520,-720,40,40,"platform",true,true,false,"white",null,false),
+new Entity(-3120,-680,40,40,"platform",true,true,false,"white",null,false),
+new Entity(-3520,-640,40,40,"platform",true,true,false,"white",null,false),
 new Entity(-3120,-800,40,40,"platform",true,true,false,"white",null,false),
 new Entity(-3200,-920,80,40,"platform",true,true,false,"white",null,false),
 new Entity(-3400,-960,200,40,"platform",true,true,false,"white",null,false),
@@ -671,12 +671,12 @@ new Entity(-3200,-1200,120,40,"platform",true,true,false,"white",null,false),
 new Entity(-3120,-1280,40,40,"platform",true,true,false,"white",null,false),
 new Entity(-3120,-1360,40,40,"platform",true,true,false,"white",null,false),
 new Entity(-3520,-1400,40,40,"platform",true,true,false,"white",null,false),
-new Entity(-3680,-1720,160,240,"spikes",false,true,false,"red",null,true),
-new Entity(-3400,-1720,160,240,"spikes",false,true,false,"red",null,true),
-new Entity(-3400,-1440,200,40,"platform",true,true,false,"white",null,false),
-new Entity(-3320,-1520,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
-new Entity(-3480,-1560,80,40,"platform",true,true,false,"white",null,false),
-new Entity(-3200,-1600,80,40,"platform",true,true,false,"white",null,false),
+new Entity(-3680,-1680,160,160,"spikes",false,true,false,"red",null,true),
+new Entity(-3400,-1680,160,160,"spikes",false,true,false,"red",null,true),
+new Entity(-3360,-1440,200,40,"platform",true,true,false,"white",null,false),
+new Entity(-3320,-1520,80,80,"checkpoint",true,true,false,"red",null,false),
+new Entity(-3480,-1520,80,40,"platform",true,true,false,"white",null,false),
+new Entity(-3240,-1600,120,40,"platform",true,true,false,"white",null,false),
 new Entity(-3360,-1720,120,40,"platform",true,true,false,"white",null,false),
 new Entity(-3320,-1600,40,40,"platform",true,true,false,"white",null,false),
 new Entity(-3040,-1720,440,40,"spikes",true,true,false,"red",null,true),
@@ -789,6 +789,13 @@ new Entity(3320,-560,80,80,"spikes",true,true,false,"red",null,true),
 new Entity(3160,-760,40,40,"key",true,true,false,"yellow",null,false),
 new Entity(840,-1360,40,40,"spikes",true,true,false,"red",null,true),
 new Entity(2440,-360,40,40,"platform",true,true,false,"white",null,false),
+new Entity(3040,80,640,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(3640,-40,40,120,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(3160,-120,320,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(3160,-440,40,320,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(3040,-80,600,160,"wind",true,true,false,"#EAEAEA",null,false),
+new Entity(3160,0,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(3400,0,80,80,"spikes",true,true,false,"red",null,true),
 ];
 //Moving object params
 entities[24].period = 200;
@@ -983,6 +990,8 @@ entities[717].force = [0, 0.2];
 entities[717].period = 250;
 entities[721].force = [-0.35, 0];
 entities[721].period = 300;
+//wind
+entities[765].force = [-0.2, 0];
 var selector = -1;
 var editingText = false;
 var texts = [
@@ -1375,6 +1384,12 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
                     CTX.fillRect(this.position.x + offsetX, this.position.y + offsetY, this.width, this.height);
                 break;
                 case "music":
+                break;
+                case "wind":
+                    CTX.fillStyle = this.color;
+                    CTX.globalAlpha = 0.5;
+                    CTX.fillRect(this.position.x + offsetX + 3, this.position.y + offsetY + 3, this.width - 6, this.height - 6);
+                    CTX.globalAlpha = 1;
                 break;
                 default:
                     CTX.fillRect(this.position.x + offsetX, this.position.y + offsetY, this.width, this.height);

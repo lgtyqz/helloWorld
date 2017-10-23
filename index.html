@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Everything Trying to Kill You</title>
+<title>Hello, World</title>
 <style>
 canvas {
     border: 1px solid #999999;
@@ -40,7 +40,7 @@ new Entity(600,720,40,40,"spikes",true,null,null,"red",null,true),
 new Entity(880,720,40,40,"spikes",true,null,null,"red",null,true),
 new Entity(940,600,40,40,"spikes",true,null,null,"red",null,true),
 new Entity(720,680,80,80,"checkpoint",true,null,null,"red",null,false),
-new Entity(1120,680,80,80,"checkpoint",true,null,null,"#DEDEDE",null,false),
+new Entity(1120,680,80,80,"checkpoint",true,null,null,"red",null,false),
 new Entity(940,1000,800,40,"spikes",true,null,null,"red",null,true),
 new Entity(1320,800,120,40,"platform",true,null,null,"white",null,false),
 new Entity(1480,720,40,120,"platform",true,null,null,"white",null,false),
@@ -796,6 +796,36 @@ new Entity(3160,-440,40,320,"ice",true,true,false,"#00FFFF",null,false),
 new Entity(3040,-80,600,160,"wind",true,true,false,"#EAEAEA",null,false),
 new Entity(3160,0,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
 new Entity(3400,0,80,80,"spikes",true,true,false,"red",null,true),
+new Entity(3680,-200,40,160,"spikes",true,true,false,"red",null,true),
+new Entity(3200,-200,80,80,"checkpoint",true,true,false,"red",null,false),
+new Entity(3240,-240,40,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(3200,-240,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(3440,-280,160,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(2520,-520,40,80,"platform",true,true,false,"white",null,false),
+new Entity(3400,-560,80,80,"changer",true,true,false,"blue",null,false),
+new Entity(3480,-560,40,120,"spikes",true,true,false,"red",null,true),
+new Entity(3800,-280,40,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(4040,-320,40,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(4280,-360,40,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(4640,-360,480,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(4840,-440,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(4760,-440,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(4960,-440,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(4640,-840,1280,480,"wind",true,true,false,"#EAEAEA",null,false),
+new Entity(5280,-360,640,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(5360,-480,40,120,"spikes",true,true,false,"red",null,true),
+new Entity(5280,-400,40,40,"platform",true,true,false,"white",null,false),
+new Entity(5480,-480,120,40,"spikes",true,true,false,"red",null,true),
+new Entity(5680,-400,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(5760,-520,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(5600,-560,320,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(6080,-440,40,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(5080,-600,40,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(4600,-640,40,40,"ice",true,true,false,"#00FFFF",null,false),
+new Entity(4600,-680,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(-4920,2040,9160,200,"music",true,true,false,"underworld",null,false),
+new Entity(1040,1640,280,400,"music",true,true,false,"jungleBGM",null,false),
+new Entity(2680,1920,1520,120,"music",true,true,false,"underworld",null,false),
 ];
 //Moving object params
 entities[24].period = 200;
@@ -991,7 +1021,8 @@ entities[717].period = 250;
 entities[721].force = [-0.35, 0];
 entities[721].period = 300;
 //wind
-entities[765].force = [-0.2, 0];
+entities[765].force = [0.2, 0];
+entities[783].force = [-0.2, 0];
 var selector = -1;
 var editingText = false;
 var texts = [
@@ -1095,41 +1126,58 @@ var sounds = {
     jump: new Audio("jumpy.wav"),
     death: new Audio("bewm.wav"),
     teleporter: new Audio("goal.mp3"),
-    jungleBGM: new Audio("Jungle_Jazz.ogg")
+    jungleBGM: new Audio("Jungle_Jazz.mp3"),
+    underworld: new Audio("manOhMan.mp3")
 };
 sounds.jungleBGM.volume = 1.0;
+sounds.underworld.volume = 1.0;
 //TODO: Sound transitions, akin to VVVVVV
-var soundInterval;
+var decInterval;
+var incInterval;
 var currentlyPlayingBGM = "jungleBGM";
-function decreaseVolume(){
-    if(!sounds[currentlyPlayingBGM].paused){
-        sounds[currentlyPlayingBGM].volume = 1;
-        if(sounds[currentlyPlayingBGM].volume <= 0){
-            if(!sounds[currentlyPlayingBGM].paused){
+sounds[currentlyPlayingBGM].pause();
+function decreaseVolume(newBGM){
+    //console.log("dV");
+    if(!(sounds[currentlyPlayingBGM].paused || newBGM == currentlyPlayingBGM)){
+        //console.log("AS");
+        if(sounds[currentlyPlayingBGM].volume <= 0.05){
+            if(!sounds[currentlyPlayingBGM].paused ||
+            sounds[currentlyPlayingBGM].duration > 0){
+                sounds[currentlyPlayingBGM].loop = false;
                 sounds[currentlyPlayingBGM].pause();
-                sounds[currentlyPlayingBGM].loop = true;
+                clearInterval(decInterval);
+                currentlyPlayingBGM = newBGM;
+                incInterval = setInterval(increaseVolume, 50);
+                sounds[newBGM].play();
+                sounds[newBGM].volume = 0;
+                sounds[newBGM].currentTime = 0;
+                sounds[newBGM].loop = true;
             }
-            clearInterval(soundInterval);
-            soundInterval = setInterval(increaseVolume, 50);
+        }else{
+            sounds[currentlyPlayingBGM].volume -= 0.05;
         }
-        sounds[currentlyPlayingBGM].volume -= 0.05;
     }else{
-        clearInterval(soundInterval);
-        soundInterval = setInterval(increaseVolume, 50);
+        //console.log("Noscope");
+        currentlyPlayingBGM = newBGM;
+        clearInterval(decInterval);
+        incInterval = setInterval(increaseVolume, 50);
+        if(sounds[newBGM].paused){
+            sounds[newBGM].play();
+            sounds[newBGM].volume = 0;
+            sounds[newBGM].currentTime = 0;
+            sounds[newBGM].loop = true;
+        }
+        //console.log(decInterval);
+        return;
     }
 }
 function increaseVolume(){
-    if(sounds[currentlyPlayingBGM].paused){
-        sounds[currentlyPlayingBGM].play();
-        sounds[currentlyPlayingBGM].volume = 0;
-        sounds[currentlyPlayingBGM].currentTime = 0;
-        sounds[currentlyPlayingBGM].loop = true;
+    //console.log(sounds[currentlyPlayingBGM].volume);
+    if(sounds[currentlyPlayingBGM].volume >= 0.95){
+        clearInterval(incInterval);
+    }else{
+        sounds[currentlyPlayingBGM].volume += 0.05;
     }
-    console.log(sounds[currentlyPlayingBGM].volume)
-    if(sounds[currentlyPlayingBGM].volume >= 1){
-        clearInterval(soundInterval);
-    }
-    sounds[currentlyPlayingBGM].volume += 0.05;
 }
 function init(){
     GAME.start();
@@ -1440,8 +1488,8 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
                             Math.sign(entities[i].velocity.y) * Math.abs(entities[i].force[1]));
                     }else{
                         this.applyForce(
-                            Math.abs(entities[i].force[0]),
-                            Math.abs(entities[i].force[1]));
+                            entities[i].force[0],
+                            entities[i].force[1]);
                     }
                 }
             }
@@ -1451,11 +1499,16 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
             this.position.y < entities[i].position.y + entities[i].height &&
             !entities[i].inactive){
                 if(entities[i].type == "music"){
-                    currentlyPlayingBGM = entities[i].color;
-                    soundInterval = setInterval(decreaseVolume, 50);
+                    //console.log(entities[i].color);
+                    //decInterval = setInterval(function(){decreaseVolume(entities[i].color)}, 50);
+                    var e = entities[i].color;
+                    decInterval = setInterval(function(){decreaseVolume(e)}, 50);
+                    entities[i].inactive = true;
                 }
                 if(entities[i].deadly){
                     this.dead = true;
+                    this.velocity.x -= entities[i].velocity.x;
+                    this.velocity.y -= entities[i].velocity.y;
                 }
                 if(entities[i].type == "changer"){
                     this.color = entities[i].color;
@@ -1598,6 +1651,10 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
                             this.jumping = false;
                         }
                     }
+                }
+            }else{
+                if(entities[i].type == "music" && entities[i].inactive){
+                    entities[i].inactive = false;
                 }
             }
         }

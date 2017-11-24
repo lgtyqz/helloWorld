@@ -3,9 +3,9 @@
 <head>
 <title>Hello, World</title>
 <style>
-canvas {
-    border: 1px solid #999999;
-}
+canvas {border: 1px solid #999999;}
+/*#devConsole {visibility: visible;}
+#runner {visibility: visible;}*/
 </style>
 <script>
 var GAME = {
@@ -513,7 +513,7 @@ new Entity(160,-640,40,40,"spikes",true,true,false,"red",null,true),
 new Entity(240,-640,40,40,"spikes",true,true,false,"red",null,true),
 new Entity(320,-640,40,40,"spikes",true,true,false,"red",null,true),
 new Entity(-80,-720,160,40,"platform",true,true,false,"white",null,false),
-new Entity(-40,-800,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(-40,-800,80,80,"checkpoint",true,true,false,"red",null,false),
 new Entity(640,-200,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
 new Entity(960,-200,160,40,"slime",true,true,false,"#00FF00",null,false),
 new Entity(520,-80,40,40,"platform",true,true,false,"white",null,false),
@@ -636,7 +636,7 @@ new Entity(-3240,520,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
 new Entity(-2040,320,40,80,"platform",true,true,false,"white",null,false),
 new Entity(-1640,160,40,40,"platform",true,true,false,"white",null,false),
 new Entity(-2000,200,40,40,"platform",true,true,false,"white",null,false),
-new Entity(-920,-600,760,40,"platform",true,true,false,"white",null,false),
+new Entity(-1040,-600,880,40,"platform",true,true,false,"white",null,false),
 new Entity(-3320,880,120,40,"key",true,true,false,"yellow",null,false),
 new Entity(-2080,120,40,40,"platform",true,true,false,"white",null,false),
 new Entity(-2200,80,40,80,"platform",true,true,false,"white",null,false),
@@ -740,7 +740,7 @@ new Entity(720,-1960,80,40,"platform",true,true,false,"white",null,false),
 new Entity(840,-1960,80,40,"platform",true,true,false,"white",null,false),
 new Entity(360,-2000,360,40,"platform",true,true,false,"white",null,false),
 new Entity(920,-2000,360,40,"platform",true,true,false,"white",null,false),
-new Entity(560,-2080,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(560,-2080,80,80,"checkpoint",true,true,false,"red",null,false),
 new Entity(520,-1520,240,200,"spikes",true,true,false,"red",null,true),
 new Entity(480,-1920,40,200,"spikes",true,true,false,"red",null,true),
 new Entity(640,-1360,160,80,"spikes",false,true,false,"red",null,true),
@@ -754,7 +754,7 @@ new Entity(1760,-1400,40,200,"spikes",true,true,false,"red",null,true),
 new Entity(2000,-1400,40,200,"spikes",true,true,false,"red",null,true),
 new Entity(2160,-1480,40,120,"spikes",true,true,false,"red",null,true),
 new Entity(2320,-1400,120,80,"spikes",true,true,false,"red",null,true),
-new Entity(2600,-1160,1640,40,"platform",true,true,false,"white",null,false),
+new Entity(2600,-1160,3600,40,"platform",true,true,false,"white",null,false),
 new Entity(2760,-920,80,80,"changer",true,true,false,"red",null,false),
 new Entity(2840,-920,40,120,"spikes",true,true,false,"red",null,true),
 new Entity(2960,-1120,40,320,"spikes",true,true,false,"red",null,true),
@@ -826,6 +826,246 @@ new Entity(4600,-680,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
 new Entity(-4920,2040,9160,200,"music",true,true,false,"underworld",null,false),
 new Entity(1040,1640,280,400,"music",true,true,false,"jungleBGM",null,false),
 new Entity(2680,1920,1520,120,"music",true,true,false,"underworld",null,false),
+new Entity(2880,1640,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(2720,-1240,80,80,"checkpoint",true,true,false,"red",null,false),
+new Entity(3120,-1200,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(3000,-1760,40,440,"spikes",true,true,false,"red",null,true),
+new Entity(3160,-1760,40,440,"spikes",true,true,false,"red",null,true),
+new Entity(3040,-1960,40,200,"spikes",true,true,false,"red",null,true),
+new Entity(3120,-1960,40,200,"spikes",true,true,false,"red",null,true),
+new Entity(3080,-2000,40,40,"platform",true,true,false,"white",null,false),
+new Entity(3440,-1200,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(3320,-1560,40,240,"spikes",true,true,false,"red",null,true),
+new Entity(3480,-1560,40,240,"spikes",true,true,false,"red",null,true),
+new Entity(3440,-1680,40,120,"spikes",true,true,false,"red",null,true),
+new Entity(3280,-1680,40,120,"spikes",true,true,false,"red",null,true),
+new Entity(3400,-1760,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(3240,-1880,40,200,"spikes",true,true,false,"red",null,true),
+new Entity(3360,-1880,40,120,"spikes",true,true,false,"red",null,true),
+new Entity(3280,-2000,40,120,"spikes",true,true,false,"red",null,true),
+new Entity(3400,-2000,40,120,"spikes",true,true,false,"red",null,true),
+new Entity(3320,-2040,80,40,"platform",true,true,false,"white",null,false),
+new Entity(3560,-1520,40,200,"spikes",true,true,false,"red",null,true),
+new Entity(3720,-1520,40,200,"spikes",true,true,false,"red",null,true),
+new Entity(3680,-1200,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(3600,-1640,40,120,"spikes",true,true,false,"red",null,true),
+new Entity(3760,-1760,40,240,"spikes",true,true,false,"red",null,true),
+new Entity(3640,-1760,40,120,"spikes",true,true,false,"red",null,true),
+new Entity(3680,-1840,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(3800,-1920,40,160,"spikes",true,true,false,"red",null,true),
+new Entity(3760,-2000,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(3640,-1920,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(3680,-2040,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(3600,-2000,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(3640,-2040,40,40,"platform",true,true,false,"white",null,false),
+new Entity(3880,-2000,40,720,"spikes",true,true,false,"red",null,true),
+new Entity(4040,-2000,40,720,"spikes",true,true,false,"red",null,true),
+new Entity(3920,-1480,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(4000,-1200,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(3960,-1760,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(3920,-2000,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(4000,-2040,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4160,-1240,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(3520,-1680,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(4320,-2000,120,840,"platform",true,true,false,"white",null,false),
+new Entity(4400,-2320,40,320,"spikes",true,true,false,"red",null,true),
+new Entity(4400,-2520,960,40,"platform",true,true,false,"white",null,false),
+new Entity(4440,-2320,680,40,"platform",true,true,false,"white",null,false),
+new Entity(5320,-2480,40,400,"platform",true,true,false,"white",null,false),
+new Entity(5120,-2320,40,240,"platform",true,true,false,"white",null,false),
+new Entity(5160,-2120,160,40,"platform",true,true,false,"white",null,false),
+new Entity(5160,-2160,120,40,"key",true,true,false,"yellow",null,false),
+new Entity(5240,-2200,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(5200,-2240,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(5240,-2280,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(4280,-1240,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4080,-1320,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4280,-1400,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4080,-1480,40,40,"platform",false,true,false,"white",null,false),
+new Entity(4280,-1560,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4080,-1640,40,40,"platform",false,true,false,"white",null,false),
+new Entity(4280,-1720,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4280,-1840,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4240,-1920,40,40,"platform",true,true,false,"white",null,false),
+new Entity(3200,-1360,120,40,"spikes",true,true,false,"red",null,true),
+new Entity(3520,-1360,40,40,"platform",true,true,false,"white",null,false),
+new Entity(3760,-1360,120,40,"spikes",true,true,false,"red",null,true),
+new Entity(3480,-1520,120,120,"teleporter",true,true,false,"#FA55AD",null,false),
+new Entity(3520,-1400,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(3760,-1400,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(3760,-1545,120,120,"teleporter",true,true,false,"#FA55AD",null,false),
+new Entity(3200,-1480,120,120,"teleporter",true,true,false,"#FA55AD",null,false),
+new Entity(3280,-1560,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(3480,-2000,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(3560,-2040,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(3160,-2160,160,80,"water",true,true,false,"#008cff",null,false),
+new Entity(3200,-2080,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(3160,-2200,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(2720,-2000,240,40,"platform",true,true,false,"white",null,false),
+new Entity(2800,-2080,80,80,"checkpoint",true,true,false,"red",null,false),
+new Entity(4080,-1840,80,40,"platform",true,true,false,"white",null,false),
+new Entity(4080,-1920,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(720,-2000,200,40,"keyWall",true,true,false,"#995000",null,false),
+new Entity(360,-2280,920,40,"platform",true,true,false,"white",null,false),
+new Entity(360,-2240,40,240,"keyWall",true,true,false,"#995000",null,false),
+new Entity(1240,-2240,40,240,"keyWall",true,true,false,"#995000",null,false),
+new Entity(1000,-2120,120,120,"teleporter",true,true,false,"#FA55AD",null,false),
+new Entity(1960,-2840,40,840,"platform",true,true,false,"white",null,false),
+new Entity(2080,-2840,40,840,"platform",true,true,false,"white",null,false),
+new Entity(2040,-2240,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(2000,-2040,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(2000,-2440,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(2040,-2640,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(2000,-2840,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(2040,-2840,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(2040,-2800,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(2120,-2840,1000,40,"platform",true,true,false,"white",null,false),
+new Entity(2080,-3040,1040,40,"spikes",true,true,false,"red",null,true),
+new Entity(3080,-2880,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(3080,-3000,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(1320,-2120,120,40,"platform",false,true,false,"white",null,false),
+new Entity(1480,-2040,40,400,"spikes",true,true,false,"red",null,true),
+new Entity(1720,-2040,40,400,"spikes",true,true,false,"red",null,true),
+new Entity(2560,-2920,40,80,"platform",true,true,false,"white",null,false),
+new Entity(1320,-1640,200,40,"platform",true,true,false,"white",null,false),
+new Entity(1520,-1600,800,40,"platform",true,true,false,"white",null,false),
+new Entity(2280,-2200,40,600,"platform",true,true,false,"white",null,false),
+new Entity(1320,-1720,80,80,"changer",true,true,false,"#00FF00",null,false),
+new Entity(1400,-1720,80,80,"changer",true,true,false,"blue",null,false),
+new Entity(1760,-1920,200,320,"water",true,true,false,"#008cff",null,false),
+new Entity(2280,-2600,1000,40,"platform",true,true,false,"white",null,false),
+new Entity(2120,-2800,40,600,"spikes",true,true,false,"red",null,true),
+new Entity(2120,-2200,160,40,"keyWall",true,true,false,"#995000",null,false),
+new Entity(2640,-2040,40,80,"platform",true,true,false,"white",null,false),
+new Entity(2520,-2080,40,120,"platform",true,true,false,"white",null,false),
+new Entity(2400,-2120,40,160,"platform",true,true,false,"white",null,false),
+new Entity(2400,-2240,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(2640,-2160,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(2520,-2200,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(2320,-2160,40,40,"platform",true,true,false,"white",null,false),
+new Entity(2280,-2440,40,200,"platform",true,true,false,"white",null,false),
+new Entity(2320,-2440,960,40,"platform",true,true,false,"white",null,false),
+new Entity(2520,-1680,40,40,"platform",true,true,false,"white",null,false),
+new Entity(2520,-1720,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(1360,-1560,960,40,"spikes",true,true,false,"red",null,true),
+new Entity(1480,-1600,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(2280,-2560,160,40,"spikes",true,true,false,"red",null,true),
+new Entity(2480,-2480,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(2600,-2480,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(2760,-2480,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(2880,-2480,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(3000,-2560,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(3640,-2480,120,40,"platform",true,true,false,"white",null,false),
+new Entity(3240,-2480,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(2320,-2800,120,40,"spikes",true,true,false,"red",null,true),
+new Entity(2440,-2640,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(2520,-2800,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(2600,-2640,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(2640,-2800,80,80,"checkpoint",true,true,false,"red",null,false),
+new Entity(2160,-2240,120,40,"key",true,true,false,"yellow",null,false),
+new Entity(3320,-2480,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(3400,-2520,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(3480,-2560,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(3560,-2600,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(3640,-2600,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(3440,-2560,40,40,"platform",true,true,false,"white",null,false),
+new Entity(3120,-2840,120,40,"spikes",true,true,false,"red",null,true),
+new Entity(3240,-2680,40,80,"platform",true,true,false,"white",null,false),
+new Entity(3360,-3280,80,40,"platform",true,true,false,"white",null,false),
+new Entity(3520,-2920,40,40,"platform",true,true,false,"white",null,false),
+new Entity(3440,-3080,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(3600,-3120,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(3600,-3400,40,40,"platform",true,true,false,"white",null,false),
+new Entity(3440,-3280,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(3720,-2600,720,40,"spikes",true,true,false,"red",null,true),
+new Entity(4560,-2480,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(4920,-2400,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(2680,-2680,240,40,"platform",true,true,false,"white",null,false),
+new Entity(2920,-2720,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(2960,-2640,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(3120,-3040,120,40,"spikes",true,true,false,"red",null,true),
+new Entity(2680,-2640,40,40,"keyShard",true,true,false,"#FFDD00",null,false),
+new Entity(3560,-3280,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(3720,-2440,40,240,"platform",true,true,false,"white",null,false),
+new Entity(4080,-2560,40,240,"platform",true,true,false,"white",null,false),
+new Entity(3760,-2440,200,40,"spikes",true,true,false,"red",null,true),
+new Entity(3920,-2320,200,40,"spikes",true,true,false,"red",null,true),
+new Entity(4000,-2240,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4160,-2280,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(4080,-2200,80,40,"platform",false,true,false,"white",null,false),
+new Entity(4200,-2280,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4560,-2560,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4600,-2600,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(4320,-2640,120,40,"platform",true,true,false,"white",null,false),
+new Entity(4400,-2720,40,80,"platform",true,true,false,"white",null,false),
+new Entity(3160,-3840,1280,40,"platform",true,true,false,"white",null,false),
+new Entity(3160,-3760,1160,40,"spikes",true,true,false,"red",null,true),
+new Entity(3560,-3360,40,80,"platform",true,true,false,"white",null,false),
+new Entity(4800,-3840,120,120,"teleporter",true,true,false,"#FA55AD",null,false),
+new Entity(4800,-2560,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(4880,-2600,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(4960,-2560,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(5160,-2600,80,80,"checkpoint",true,true,false,"red",null,false),
+new Entity(5320,-2600,40,40,"platform",false,true,false,"white",null,false),
+new Entity(5320,-2800,40,40,"platform",false,true,false,"white",null,false),
+new Entity(5160,-2840,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(5000,-2760,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(4840,-2800,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(4680,-2840,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(4600,-3000,40,280,"platform",true,true,false,"white",null,false),
+new Entity(4680,-3440,40,400,"platform",true,true,false,"white",null,false),
+new Entity(4640,-3280,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(4760,-3000,320,40,"spikes",true,true,false,"red",null,true),
+new Entity(5120,-3000,40,40,"platform",true,true,false,"white",null,false),
+new Entity(5320,-3400,40,400,"platform",true,true,false,"white",null,false),
+new Entity(5200,-3440,160,40,"platform",true,true,false,"white",null,false),
+new Entity(5200,-3480,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(4720,-3320,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(4640,-3440,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(5000,-3400,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4720,-3000,40,40,"platform",true,true,false,"white",null,false),
+new Entity(5000,-3440,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(4680,-3520,40,40,"platform",false,true,false,"white",null,false),
+new Entity(4440,-3840,40,120,"spikes",true,true,false,"red",null,true),
+new Entity(4760,-3360,40,40,"platform",true,true,false,"white",null,false),
+new Entity(4800,-3720,120,40,"key",true,true,false,"yellow",null,false),
+new Entity(1600,-2080,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(1600,-2160,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(1560,-1880,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(1800,-1640,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(1680,-2200,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(1280,-2280,680,40,"spikes",true,true,false,"red",null,true),
+new Entity(960,-2040,40,40,"platform",true,true,false,"white",null,false),
+new Entity(1240,-2040,40,40,"platform",true,true,false,"white",null,false),
+new Entity(1520,-1840,200,40,"platform",true,true,false,"white",null,false),
+new Entity(-1160,-600,40,40,"platform",true,true,false,"white",null,false),
+new Entity(-1640,-600,40,40,"platform",true,true,false,"white",null,false),
+new Entity(-2120,-600,40,40,"platform",true,true,false,"white",null,false),
+new Entity(-2280,-680,40,120,"platform",true,true,false,"white",null,false),
+new Entity(-2400,-760,40,200,"platform",true,true,false,"white",null,false),
+new Entity(-2520,-840,40,280,"platform",true,true,false,"white",null,false),
+new Entity(-3040,-760,120,40,"platform",true,true,false,"white",null,false),
+new Entity(-3040,-840,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(-2760,-800,40,40,"platform",true,true,false,"white",null,false),
+new Entity(-2800,-880,40,80,"spikes",true,true,false,"red",null,true),
+new Entity(-2560,-880,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(-2480,-830,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(-2320,-720,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(-2240,-650,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(-800,-720,80,80,"spikes",true,true,false,"red",null,true),
+new Entity(-360,-680,80,80,"spikes",true,true,false,"red",null,true),
+new Entity(-840,-720,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(-320,-640,80,40,"spikes",true,true,false,"red",null,true),
+new Entity(-1040,-1080,240,120,"slime",true,true,false,"#00FF00",null,false),
+new Entity(-920,-1120,40,40,"spikes",true,true,false,"red",null,true),
+new Entity(-1040,-2040,240,960,"water",true,true,false,"#008cff",null,false),
+new Entity(-800,-1120,80,80,"changer",true,true,false,"#00FF00",null,false),
+new Entity(-1600,-2040,560,40,"platform",true,true,false,"white",null,false),
+new Entity(-800,-2040,560,40,"platform",true,true,false,"white",null,false),
+new Entity(-1600,-2480,1360,440,"water",true,true,false,"#008cff",null,false),
+new Entity(-1000,-680,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
+new Entity(-2240,-560,120,40,"platform",true,true,false,"white",null,false),
+new Entity(-2240,-640,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
 ];
 //Moving object params
 entities[24].period = 200;
@@ -1023,6 +1263,44 @@ entities[721].period = 300;
 //wind
 entities[765].force = [0.2, 0];
 entities[783].force = [-0.2, 0];
+//Back to moving spikes
+entities[853].force = [-0.075, 0];
+entities[853].period = 80;
+entities[855].force = [-0.1, 0];
+entities[855].period = 80;
+entities[868].force = [-0.2, -0.1];
+entities[868].period = 150;
+entities[869].force = [0.2, -0.1];
+entities[869].period = 150;
+entities[895].force = [0.2, 0];
+entities[895].period = 250;
+entities[911].force = [0, 0.08];
+entities[911].period = 80;
+entities[912].force = [0, 0.08];
+entities[912].period = 80;
+entities[913].force = [0, 0.08];
+entities[913].period = 80;
+entities[928].force = [-0.2, 0];
+entities[928].period = 200;
+entities[935].force = [0, -0.15];
+entities[935].period = 150;
+entities[936].force = [0, -0.15];
+entities[936].period = 150;
+entities[936].timer = 25;
+entities[937].force = [0, -0.15];
+entities[937].period = 150;
+entities[937].timer = 50;
+entities[938].force = [0, -0.15];
+entities[938].period = 150;
+entities[938].timer = 74;
+entities[964].force = [0.15, 0];
+entities[964].period = 150;
+entities[978].force = [0, -0.1];
+entities[978].period = 200;
+entities[979].force = [-0.2, 0];
+entities[979].period = 400;
+entities[997].force = [0, -0.2];
+entities[997].period = 200;
 var selector = -1;
 var editingText = false;
 var texts = [
@@ -1054,6 +1332,11 @@ for(var i in entities){
     }
 }
 GAME.noDeathMode = false;
+/*GAME.devMode = false;
+if(GAME.devMode){
+    document.getElementById("devConsole").style.visibility = "visible";
+    document.getElementById("runner").style.visibility = "visible";
+}*/
 var deaths = 0;
 //temp edit for editing
 var checkpoint = {x: 0, y: 0, color: "red", gravity: 0.5};
@@ -1073,7 +1356,7 @@ player.lastCheck = 0;
 var stuffToDestroy = [];
 if(localStorage){
     /**
-     * ettky data format: x, y, keys, keyShards, deaths, mode, timer, *stuffToDestroy
+     * ettky data format: x, y, mode, keys, keyShards, deaths, mode, timer, *stuffToDestroy
      * x, y: x and y coords of player.
      * keys, keyShards, deaths: Self-explanatory.
      * mode: 0=normal, 1=noDeath, 2=noCheckpoint
@@ -1084,14 +1367,17 @@ if(localStorage){
         //load data
         var tempETTKY = localStorage.ettky.split(",");
         for(var i in tempETTKY){
-            tempETTKY[i] = Number(tempETTKY[i]);
+            if(i != 2){
+                tempETTKY[i] = Number(tempETTKY[i]);
+            }
         }
         player.position.x = tempETTKY[0];
         player.position.y = tempETTKY[1];
-        player.keys = Number(tempETTKY[2]);
-        player.keyShards = Number(tempETTKY[3]);
-        deaths = Number(tempETTKY[4]);
-        var mode = Number(tempETTKY[5]);
+        player.mode = tempETTKY[2];
+        player.keys = Number(tempETTKY[3]);
+        player.keyShards = Number(tempETTKY[4]);
+        deaths = Number(tempETTKY[5]);
+        var mode = Number(tempETTKY[6]);
         if(mode == 1){
             GAME.noDeathMode = true;
         }else if(mode == 2){
@@ -1100,9 +1386,9 @@ if(localStorage){
             GAME.noDeathMode = false;
             GAME.noCheckpointMode = false;
         }
-        speedrunTimer = tempETTKY[6];
-        if(tempETTKY.length > 7){
-            stuffToDestroy = tempETTKY.slice(7);
+        speedrunTimer = tempETTKY[7];
+        if(tempETTKY.length > 8){
+            stuffToDestroy = tempETTKY.slice(8);
             console.log(stuffToDestroy);
             for(var s in stuffToDestroy){
                 for(var i = entities.length - 1; i >= 0; i--){
@@ -1114,7 +1400,7 @@ if(localStorage){
         }
         //TODO: Break walls, remove keys and key shards already collected
     }else{
-        localStorage.ettky = "0,0,0,0,0,0,0";
+        localStorage.ettky = "0,0,red,0,0,0,0,0";
     }
 }
 function teleport(index){
@@ -1146,12 +1432,19 @@ function decreaseVolume(newBGM){
                 sounds[currentlyPlayingBGM].loop = false;
                 sounds[currentlyPlayingBGM].pause();
                 clearInterval(decInterval);
-                currentlyPlayingBGM = newBGM;
+                currentlyPlayingBGM = String(newBGM);
                 incInterval = setInterval(increaseVolume, 50);
-                sounds[newBGM].play();
-                sounds[newBGM].volume = 0;
-                sounds[newBGM].currentTime = 0;
-                sounds[newBGM].loop = true;
+                var playPromise = sounds[newBGM].play();
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        sounds[newBGM].volume = 0;
+                        sounds[newBGM].currentTime = 0;
+                        sounds[newBGM].loop = true;
+                    }).catch(function(error) {
+                        // Automatic playback failed.
+                        // lololol
+                    });
+                }
             }
         }else{
             sounds[currentlyPlayingBGM].volume -= 0.05;
@@ -1160,12 +1453,20 @@ function decreaseVolume(newBGM){
         //console.log("Noscope");
         currentlyPlayingBGM = newBGM;
         clearInterval(decInterval);
+        clearInterval(incInterval);
         incInterval = setInterval(increaseVolume, 50);
         if(sounds[newBGM].paused){
-            sounds[newBGM].play();
-            sounds[newBGM].volume = 0;
-            sounds[newBGM].currentTime = 0;
-            sounds[newBGM].loop = true;
+            var playPromise = sounds[newBGM].play();
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+                    sounds[newBGM].volume = 0;
+                    sounds[newBGM].currentTime = 0;
+                    sounds[newBGM].loop = true;
+                }).catch(function(error) {
+                    // Automatic playback failed.
+                    // lololol
+                });
+            }
         }
         //console.log(decInterval);
         return;
@@ -1174,6 +1475,7 @@ function decreaseVolume(newBGM){
 function increaseVolume(){
     //console.log(sounds[currentlyPlayingBGM].volume);
     if(sounds[currentlyPlayingBGM].volume >= 0.95){
+        console.log("STAHP IT");
         clearInterval(incInterval);
     }else{
         sounds[currentlyPlayingBGM].volume += 0.05;
@@ -1228,6 +1530,42 @@ function TEXT(X, Y, text, size, font, color, altText){
         }else{
             GAME.context.fillText(this.text, this.position.x + offsetX, this.position.y + offsetY);
         }
+    }
+}
+function Sprite(imageSrc, intendedBounds, imageBounds){
+    //File path, String
+    this.imageSrc = imageSrc;
+    //Length 4 array: [left, top, width, height]
+    this.iBounds = intendedBounds;
+    //Length 4 array: [left, top, width, height]
+    this.aBounds = imageBounds;
+    this.draw = function(left, top, width, height){
+        GAME.context.drawImage(left + (this.aBounds[0]/this.iBounds[0]),
+                                top + (this.aBounds[1]/this.iBounds[1]),
+                                width * (this.aBounds[2]/this.iBounds[2]),
+                                height * (this.aBounds[3]/this.iBounds[3]));
+    }
+}
+function Animation(spriteList, frameDelay, autoloop){
+    this.spriteList = spriteList;
+    this.frameDelay = frameDelay;
+    this.timer = 0;
+    this.active = false;
+    this.autoloop = autoloop;
+    this.currentSprite = 0;
+    this.draw = function(left, top, width, height){
+        if(this.timer == this.frameDelay){
+            if(this.autoloop || this.currentSprite < this.spriteList.length - 1){
+                this.currentSprite++;
+                this.currentSprite %= this.spriteList.length;
+            }
+        }
+        this.spriteList[this.currentSprite].draw(left, top, width, height);
+        this.timer++;
+    }
+    this.reset = function(){
+        this.timer = 0;
+        this.currentSprite = 0;
     }
 }
 function Entity(X, Y, width, height, type, Static, friction, gravity, color, text, deadly){
@@ -1462,6 +1800,7 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
     this.save = function(){
         var outString = this.position.x.toString() + "," +
                         this.position.y.toString() + "," +
+                        player.mode + "," +
                         player.keys.toString() + "," +
                         player.keyShards.toString() + "," +
                         deaths.toString() + ",0," +
@@ -1502,6 +1841,7 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
                     //console.log(entities[i].color);
                     //decInterval = setInterval(function(){decreaseVolume(entities[i].color)}, 50);
                     var e = entities[i].color;
+                    clearInterval(decInterval);
                     decInterval = setInterval(function(){decreaseVolume(e)}, 50);
                     entities[i].inactive = true;
                 }
@@ -1707,7 +2047,7 @@ document.onkeydown = function(e){
                 if(shifting){
                     var reset = confirm("Are you sure you want to reset?");
                     if(reset){
-                        localStorage.ettky = "0,0,0,0,0,0,0";
+                        localStorage.ettky = "0,0,red,0,0,0,0,0";
                         location.reload();
                     }
                 }
@@ -2013,9 +2353,15 @@ function draw(){
     }
     GAME.frameCount++;
 }
+/*function runConsole(){
+    //http://utf-8.jp/public/jjencode.html
+    eval(document.getElementById("devConsole").value);
+}*/
 </script>
 </head>
 <body onload="init()">
     <div id="output"></div><br>
+    <!--<input type="text" id="devConsole">
+    <button onclick="runConsole()" id="runner">Run Console</button>-->
 </body>
 </html>

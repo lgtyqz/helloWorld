@@ -26,7 +26,7 @@ var GAME = {
     camera: {x:0, y:0},
     editingMode: false, noDeathMode: false,
     noCheckpointMode: false, debugMode: false
-}//kek
+}
 var entities = [
 new Entity(-200,-40,600,40,"platform",true,null,null,"white",null,false,-1),
 new Entity(-200,600,600,40,"platform",true,null,null,"white",null,false,-1),
@@ -1539,9 +1539,9 @@ function init(){
         new ANIMATION([
             new Sprite("12", [1, 1, 144, 144], [1, 1, 160, 160]),
             ], 1, false, "Key Shard"),
-        /*new ANIMATION([
+        new ANIMATION([
             new Sprite("13", [1, 1, 144, 144], [1, 1, 160, 160]),
-            ], 1, false, "Y-static"),*/
+            ], 1, false, "Y-static"),
     ];
     for(var i = 0; i < spriteANIMATIONs.length; i++){
         console.log("LOLOL:" + spriteANIMATIONs[i]);
@@ -1826,7 +1826,7 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
                         this.applyForce(0, GAME.gravity);
                     }
                     this.platformCollisionCheck();
-                    if(!this.ANIMATIONs || this.debugMode){
+                    if(!this.ANIMATIONs || GAME.debugMode){
                         CTX.globalAlpha = 0.5;
                         CTX.fillRect(this.position.x + offsetX, this.position.y + offsetY, this.width, this.height);
                         CTX.globalAlpha = 1;
@@ -2604,7 +2604,7 @@ function draw(){
         <img id="11.1" class="img" src="./Images/G-right.png" alt="It didn't work.">
         <img id="11.2" class="img" src="./Images/G-left.png" alt="It didn't work.">
         <img id="12" class="img" src="./Images/KeyShard.png" alt="It didn't work.">
-        <!--<img id="13" class="img" src="./Images/Y.png" alt="It didn't work.">-->
+        <img id="13" class="img" src="./Images/Y.png" alt="It didn't work.">
         <!--<input type="text" id="devConsole">
         <button onclick="runConsole()" id="runner">Run Console</button>-->
     </div>

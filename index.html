@@ -1826,7 +1826,7 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
                         this.applyForce(0, GAME.gravity);
                     }
                     this.platformCollisionCheck();
-                    if(!this.ANIMATIONs && !this.debugMode){
+                    if(!this.ANIMATIONs || this.debugMode){
                         CTX.globalAlpha = 0.5;
                         CTX.fillRect(this.position.x + offsetX, this.position.y + offsetY, this.width, this.height);
                         CTX.globalAlpha = 1;

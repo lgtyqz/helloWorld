@@ -24,7 +24,7 @@ var GAME = {
     gravity: 0.5,
     level: 1,
     camera: {x:0, y:0},
-    editingMode: false, noDeathMode: false,
+    editingMode: true, noDeathMode: false,
     noCheckpointMode: false, debugMode: false
 }
 var entities = [
@@ -1498,49 +1498,49 @@ function init(){
     }
     spriteANIMATIONs = [
         new ANIMATION([
-            new Sprite("0", [1, 1, 40, 40], [1, 1, 40, 40]),
+            new Sprite("0", [1, 1, 40, 40], [0, 0, 40, 40]),
             ], 1, false, "Normal Block"),
         new ANIMATION([
-            new Sprite("1", [1, 1, 40, 40], [1, 1, 40, 40]),
+            new Sprite("1", [1, 1, 40, 40], [0, 0, 40, 40]),
             ], 1, false, "Long Block"),
         new ANIMATION([
-            new Sprite("2", [1, 1, 40, 40], [1, 1, 40, 40]),
+            new Sprite("2", [1, 1, 40, 40], [0, 0, 40, 40]),
             ], 1, false, "Up Spikes"),
         new ANIMATION([
-            new Sprite("3", [1, 1, 40, 40], [1, 1, 40, 40]),
+            new Sprite("3", [1, 1, 40, 40], [0, 0, 40, 40]),
             ], 1, false, "Down Spikes"),
         new ANIMATION([
-            new Sprite("4", [1, 1, 40, 40], [1, 1, 40, 40]),
+            new Sprite("4", [1, 1, 40, 40], [0, 0, 40, 40]),
             ], 1, false, "Tall Block"),
         new ANIMATION([
-            new Sprite("5", [1, 1, 40, 40], [1, 1, 40, 40]),
+            new Sprite("5", [1, 1, 40, 40], [0, 0, 40, 40]),
             ], 1, false, "Extra Tall Block"),
         new ANIMATION([
-            new Sprite("6", [1, 1, 40, 40], [1, 1, 40, 40]),
+            new Sprite("6", [1, 1, 40, 40], [0, 0, 40, 40]),
             ], 1, false, "B-static"),
         new ANIMATION([
-            new Sprite("7", [1, 1, 144, 144], [1, 1, 160, 160]),
-            new Sprite("7.1", [1, 1, 144, 144], [1, 1, 160, 160]),
+            new Sprite("7", [1, 1, 144, 144], [0, 0, 160, 160]),
+            new Sprite("7.1", [1, 1, 144, 144], [0, 0, 160, 160]),
             ], 10, true, "B-moving"),
         new ANIMATION([
-            new Sprite("8", [1, 1, 144, 144], [1, 1, 160, 160]),
+            new Sprite("8", [1, 1, 144, 144], [0, 0, 160, 160]),
             ], 1, false, "P-static"),
         new ANIMATION([
-            new Sprite("9.1", [1, 1, 144, 144], [1, 1, 160, 160]),
-            new Sprite("9.2", [1, 1, 144, 144], [1, 1, 160, 160]),
+            new Sprite("9.1", [1, 1, 144, 144], [0, 0, 160, 160]),
+            new Sprite("9.2", [1, 1, 144, 144], [0, 0, 160, 160]),
             ], 10, true, "P-moving"),
         new ANIMATION([
-            new Sprite("10", [1, 1, 144, 144], [1, 1, 160, 160]),
+            new Sprite("10", [1, 1, 144, 144], [0, 0, 160, 160]),
             ], 1, false, "G-static"),
         new ANIMATION([
-            new Sprite("11.1", [1, 1, 144, 144], [1, 1, 160, 160]),
-            new Sprite("11.2", [1, 1, 144, 144], [1, 1, 160, 160]),
+            new Sprite("11.1", [1, 1, 144, 144], [0, 0, 160, 160]),
+            new Sprite("11.2", [1, 1, 144, 144], [0, 0, 160, 160]),
             ], 10, true, "G-moving"),
         new ANIMATION([
-            new Sprite("12", [1, 1, 144, 144], [1, 1, 160, 160]),
+            new Sprite("12", [1, 1, 144, 144], [0, 0, 160, 160]),
             ], 1, false, "Key Shard"),
         new ANIMATION([
-            new Sprite("13", [1, 1, 144, 144], [1, 1, 160, 160]),
+            new Sprite("13", [1, 1, 144, 144], [0, 0, 160, 160]),
             ], 1, false, "Y-static"),
     ];
     for(var i = 0; i < spriteANIMATIONs.length; i++){
@@ -1675,8 +1675,8 @@ function Sprite(imageSrc, intendedBounds, imageBounds){
     this.draw = function(left, top, width, height){
         //console.log("Good to go!");
         GAME.context.drawImage(this.image,
-                                left - (this.aBounds[0] * this.aBounds[2]/this.iBounds[2]),
-                                top - (this.aBounds[1] * this.aBounds[3]/this.iBounds[3]),
+                                left + (this.aBounds[0] * this.aBounds[2]/this.iBounds[2]),
+                                top + (this.aBounds[1] * this.aBounds[3]/this.iBounds[3]),
                                 width * (this.aBounds[2]/this.iBounds[2]),
                                 height * (this.aBounds[3]/this.iBounds[3]));
     }

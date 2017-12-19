@@ -26,7 +26,7 @@ var GAME = {
     camera: {x:0, y:0},
     editingMode: false, noDeathMode: false,
     noCheckpointMode: false, debugMode: false
-}//kek
+}
 var entities = [
 new Entity(-200,-40,600,40,"platform",true,null,null,"white",null,false,-1),
 new Entity(-200,600,600,40,"platform",true,null,null,"white",null,false,-1),
@@ -1530,11 +1530,11 @@ function init(){
             new Sprite("9.2", [1, 1, 144, 144], [0, 0, 160, 160]),
             ], 10, true, "P-moving"),
         new ANIMATION([
-            new Sprite("10", [1, 1, 144, 144], [0, 0, 160, 160]),
+            new Sprite("10", [1, 1, 144, 144], [-1, -1, 160, 160]),
             ], 1, false, "G-static"),
         new ANIMATION([
-            new Sprite("11.1", [1, 1, 144, 144], [0, 0, 160, 160]),
-            new Sprite("11.2", [1, 1, 144, 144], [0, 0, 160, 160]),
+            new Sprite("11.1", [1, 1, 144, 144], [-1, -1, 160, 160]),
+            new Sprite("11.2", [1, 1, 144, 144], [-1, -1, 160, 160]),
             ], 10, true, "G-moving"),
         new ANIMATION([
             new Sprite("12", [1, 1, 144, 144], [0, 0, 160, 160]),

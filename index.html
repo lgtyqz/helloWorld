@@ -1118,21 +1118,21 @@ new Entity(-1600,-2480,200,120,"spikes",true,true,false,"red",null,true),
 new Entity(-1640,-3080,120,120,"teleporter",true,true,false,"#FA55AD",null,false),
 new Entity(-1120,-1400,400,360,"keyWall",true,true,false,"#995000",null,false),
 new Entity(-960,-2320,80,80,"checkpoint",true,true,false,"#DEDEDE",null,false),
-new Entity(-1320,-2640,80,80,"spikes",true,true,false,"red",null,true),
-new Entity(-1040,-2760,80,40,"spikes",true,true,false,"red",null,true),
-new Entity(-760,-2560,40,80,"spikes",true,true,false,"red",null,true),
-new Entity(-1080,-2440,40,40,"spikes",true,true,false,"red",null,true),
-new Entity(-640,-2720,40,40,"spikes",true,true,false,"red",null,true),
-new Entity(-560,-2600,80,80,"spikes",true,true,false,"red",null,true),
-new Entity(-600,-2360,40,80,"spikes",true,true,false,"red",null,true),
-new Entity(-1520,-2840,80,120,"spikes",true,true,false,"red",null,true),
-new Entity(-440,-2840,120,80,"spikes",true,true,false,"red",null,true),
+new Entity(-1320,-2640,80,80,"spikes",false,true,false,"red",null,true),
+new Entity(-1040,-2760,80,40,"spikes",false,true,false,"red",null,true),
+new Entity(-760,-2560,40,80,"spikes",false,true,false,"red",null,true),
+new Entity(-1080,-2440,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(-640,-2720,40,40,"spikes",false,true,false,"red",null,true),
+new Entity(-560,-2600,80,80,"spikes",false,true,false,"red",null,true),
+new Entity(-600,-2360,40,80,"spikes",false,true,false,"red",null,true),
+new Entity(-1520,-2840,80,120,"spikes",false,true,false,"red",null,true),
+new Entity(-440,-2840,120,80,"spikes",false,true,false,"red",null,true),
 new Entity(-1080,-2680,80,200,"platform",true,true,false,"white",null,false),
 new Entity(-840,-2680,80,200,"platform",true,true,false,"white",null,false),
 new Entity(-1000,-2720,160,40,"platform",true,true,false,"white",null,false),
 new Entity(-1000,-2600,120,40,"spikes",true,true,false,"red",null,true),
 new Entity(-960,-2480,120,40,"spikes",true,true,false,"red",null,true),
-new Entity(-1000,-2680,40,40,"keyShard",true,true,false,"yellow",null,false),
+new Entity(-1000,-2680,40,40,"keyShard",true,true,false,"yellow",null,false),//TAGTAGTAGTAGTAGTAGTAGTGGGGG
 new Entity(1760,-1800,120,120,"teleporter",true,true,false,"#FA55AD",null,false),
 new Entity(-1440,-2920,40,360,"spikes",true,true,false,"red",null,true),
 new Entity(-1200,-2840,200,80,"spikes",true,true,false,"red",null,true),
@@ -1630,7 +1630,8 @@ var sounds = {
     death: new Audio("bewm.wav"),
     teleporter: new Audio("goal.mp3"),
     jungleBGM: new Audio("Jungle_Jazz.mp3"),
-    underworld: new Audio("manOhMan.mp3")
+    underworld: new Audio("manOhMan.mp3"),
+    checkpoint: new Audio("Checkpoint_SFX.mp3"),
 };
 sounds.jungleBGM.volume = 1.0;
 sounds.underworld.volume = 1.0;
@@ -1785,6 +1786,7 @@ function sound(src) {
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
     this.play = function(){
+        this.sound.fastSeek(0);
         this.sound.play();
     }
     this.stop = function(){
@@ -1880,6 +1882,7 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
     this.dead = false;
     this.inactive = false;
     this.timer = 0;
+    this.checkpointFirstTouched = false;
     this.update = function(offsetX, offsetY){
         if(offsetX === undefined){
             offsetX = GAME.camera.x;
@@ -2214,6 +2217,14 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
                     if(GAME.noCheckpointMode){
                         this.dead = true;
                     }else{
+                        if(!this.checkpointFirstTouched){
+                            sounds.checkpoint.play();
+                            console.log("WJWJWJW");
+                            //this.checkpointFirstTouched = true;
+                        }else{
+                            console.log("ASF");
+                            console.log(this.checkpointFirstTouched);
+                        }
                         if(!this.checkpointActive){
                             this.save();
                         }
@@ -2351,6 +2362,10 @@ function Entity(X, Y, width, height, type, Static, friction, gravity, color, tex
             }else{
                 if(entities[i].type == "music" && entities[i].inactive){
                     entities[i].inactive = false;
+                }
+                if(entities[i].type == "checkpoint" && entities[i].checkpointFirstTouched){
+                    entities[i].checkpointFirstTouched = false;
+                    console.log("WJORJ");
                 }
             }
         }
